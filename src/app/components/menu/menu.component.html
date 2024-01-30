@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-sm-6" *ngFor="let item of items">
+      <div class="card mb-3">
+        <img src="{{ item.imageURL }}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.price | currency}}</p>
+          <p class="card-text">🕒 {{ item.cookTime }} minutes</p>
+          <button *ngIf="isLoggedIn && isAdmin" (click)="deleteItem(item.id, item.name)" class="btn btn-danger">Delete</button>
+          <button *ngIf="isLoggedIn && isAdmin" (click)="goToUpdate(item)" class="btn btn-primary">Update</button>
+          <button *ngIf="isLoggedIn" (click)="addToCart(item)" class="btn btn-dark">Add to Cart</button>
+          <div *ngIf="message" class="alert">
+            {{ message }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

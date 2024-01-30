@@ -1,0 +1,42 @@
+nav {
+  background-color: #333;
+  padding: 1em 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+
+nav a, .logout-button, .login-button {
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  margin: 0 1em;
+  display: flex;
+  align-items: center;
+  border: 1px solid green;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav a.active, .logout-button.active, .login-button.active {
+  background-color: #555;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.bi-cart {
+  font-size: 30px;
+  color: green;
+  background-color: #333;
+}

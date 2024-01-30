@@ -1,0 +1,17 @@
+<nav>
+  <div class="navbar-left">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/menu" routerLinkActive="active">Menu</a>
+   <li *ngIf="isLoggedIn && isAdmin"><a routerLink="/addFood" routerLinkActive="active">Add Food</a></li>
+    <li *ngIf="isLoggedIn && (isAdmin || isWaiter)"><a routerLink="/orders" routerLinkActive="active">View Orders</a></li>
+  </div>
+  <div class="navbar-right">
+    <button *ngIf="isLoggedIn" (click)="goToCart()">
+      <i class="bi bi-cart"></i>
+    </button>
+    <li *ngIf="!isLoggedIn"><a routerLink="/login" routerLinkActive="active" class="login-button">Login</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="GoogleLogout()" class="logout-button">Logout</a></li>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
